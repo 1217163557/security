@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  profiles:
+    active: prod
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#  mvc:
+#    view:
+#      # 定位模板的目录
+#      prefix: classpath:/templates/
+#      # 给返回的页面添加后缀名
+#      suffix: .html
+  thymeleaf:
+    prefix: classpath:/templates/
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+    #     新版本不支持content-type: text/html，故新写法
+    servlet:
+      content-type: text/html
+    suffix: .html
+    check-template-location: true
+#  security:
+#    user:
+#      name: user
+#      password: user
+server:
+  port: 8081
